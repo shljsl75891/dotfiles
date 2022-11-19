@@ -546,7 +546,7 @@ globalkeys = mytable.join(
         {description = "show rofi", group = "launcher"}),
     --]]
     -- Prompt
-    awful.key({ modkey },"r",     function () awful.util.spawn("dmenu_run -fn 'SF Pro Display-10' -nb '#000000' -nf '#aaaaaa' -sf '#000000' -sb '#50fa7b'") end,
+    awful.key({ modkey },"r",     function () awful.util.spawn("dmenu_run -fn 'SF Pro Display-12' -nb '#000000' -nf '#aaaaaa' -sf '#000000' -sb '#50fa7b'") end,
                 {description = "dmenu", group = "launcher"}),
 
         awful.key({ modkey }, "x",
