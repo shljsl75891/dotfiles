@@ -277,11 +277,11 @@ theme.volume.widget:buttons(awful.util.table.join(
 local net = lain.widget.net({
     settings = function()
         widget:set_markup(markup.font(theme.font,
-                                      markup("#7AC82E", "    " ..
+                                      markup("#ffffff", "    " ..
                                                  string.format("%.0f KB/s",
                                                                net_now.received)) ..
                                           " " ..
-                                          markup("#46A8C3", "     " ..
+                                          markup("#ffffff", "     " ..
                                                      string.format("%.0f KB/s",
                                                                    net_now.sent) ..
                                                      " ")))
