@@ -93,7 +93,7 @@ local browser = "brave-browser"
 local filemanager = "pcmanfm"
 
 awful.util.terminal = terminal
-awful.util.tagnames = {"", "爵", "", "", ""}
+awful.util.tagnames = {"", "爵", "", "", ""}
 -- awful.util.tagnames = { " term", " net", " code", " media", " other " }
 awful.layout.layouts = {
     awful.layout.suit.tile, awful.layout.suit.floating,

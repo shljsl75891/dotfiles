@@ -17,7 +17,7 @@ local theme = {}
 theme.dir = os.getenv("HOME") .. "/.config/awesome/themes/mytheme"
 -- theme.wallpaper                                 = theme.dir .. "/wall.png"
 theme.font = "SF Pro Text Bold 10"
-theme.taglist_font = "SF Pro Text 18"
+theme.taglist_font = "SF Pro Text 25"
 theme.fg_normal = "#ffffff"
 theme.fg_focus = "#ffffff"
 theme.fg_urgent = "#CC9393"
@@ -28,7 +28,7 @@ theme.border_normal = "#3F3F3F"
 theme.border_focus = "#ffffff"
 theme.border_marked = "#CC9393"
 theme.border_width = dpi(0)
-theme.bg_systray = theme.bg_focus
+theme.bg_systray = theme.bg_normal
 theme.tasklist_bg_focus = "#6272a4"
 theme.titlebar_bg_focus = theme.bg_focus
 theme.titlebar_bg_normal = theme.bg_normal
@@ -346,54 +346,54 @@ function theme.at_screen_connect(s)
             layout = wibox.layout.fixed.horizontal,
             -- spr,
             s.mytaglist,
-            s.mypromptbox,
-            spr
+            -- s.mypromptbox,
+            -- spr
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            arrl_dl,
-            s.mylayoutbox,
+            -- arrl_dl,
             -- keyboardlayout,
             -- arrl_ld,
             -- wibox.container.background(mpdicon, theme.bg_focus),
             -- wibox.container.background(theme.mpd.widget, theme.bg_focus),
             -- arrl_dl,
-            wibox.container.background(volicon, theme.bg_focus),
-            wibox.container.background(theme.volume.widget, theme.bg_focus),
+            wibox.container.background(volicon, theme.bg_normal),
+            wibox.container.background(theme.volume.widget, theme.bg_normal),
 
             -- arrl_ld,
             -- wibox.container.background(mailicon, theme.bg_focus),
             -- wibox.container.background(theme.mail.widget, theme.bg_focus),
-            arrl_dl,
-            memicon,
-            mem.widget,
             arrl_ld,
-            wibox.container.background(cpuicon, theme.bg_focus),
-            wibox.container.background(cpu.widget, theme.bg_focus),
+            wibox.container.background(memicon, theme.bg_focus),
+            wibox.container.background(mem.widget, theme.bg_focus),
             arrl_dl,
+            wibox.container.background(cpuicon, theme.bg_normal),
+            wibox.container.background(cpu.widget, theme.bg_normal),
+            arrl_ld,
             -- tempicon,
             -- temp.widget,
             -- arrl_ld,
             -- wibox.container.background(fsicon, theme.bg_focus),
             -- wibox.container.background(theme.fs.widget, theme.bg_focus),
             -- arrl_dl,
-            brightness_widget {
+            wibox.container.background(brightness_widget {
                 type = 'icon_and_text',
                 program = 'brightnessctl',
                 step = 5
-            },
-            arrl_ld,
-            wibox.container.background(baticon, theme.bg_focus),
-            wibox.container.background(bat.widget, theme.bg_focus),
+            }, theme.bg_focus),
             arrl_dl,
-            neticon,
-            net.widget,
+            wibox.container.background(baticon, theme.bg_normal),
+            wibox.container.background(bat.widget, theme.bg_normal),
             arrl_ld,
+            wibox.container.background(neticon, theme.bg_focus),
+            wibox.container.background(net.widget, theme.bg_focus),
+            arrl_dl,
             wibox.widget.systray(),
             -- arrl_dl,
-            wibox.container.background(clock, theme.bg_focus)
+            wibox.container.background(clock, theme.bg_normal),
             -- spr,
+            wibox.container.background(s.mylayoutbox, theme.bg_normal),
         }
     }
 end
