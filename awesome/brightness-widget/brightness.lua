@@ -3,11 +3,9 @@
 -- Shows the brightness level of the laptop display
 -- More details could be found here:
 -- https://github.com/streetturtle/awesome-wm-widgets/tree/master/brightness-widget
-
 -- @author Pavel Makhov
 -- @copyright 2021 Pavel Makhov
 -------------------------------------------------
-
 local awful = require("awful")
 local wibox = require("wibox")
 local watch = require("awful.widget.watch")
@@ -16,7 +14,8 @@ local gfs = require("gears.filesystem")
 local naughty = require("naughty")
 local beautiful = require("beautiful")
 
-local ICON_DIR = gfs.get_configuration_dir() .. "awesome-wm-widgets/brightness-widget/"
+local ICON_DIR = gfs.get_configuration_dir() ..
+                     "awesome-wm-widgets/brightness-widget/"
 local get_brightness_cmd
 local set_brightness_cmd
 local inc_brightness_cmd
@@ -25,15 +24,15 @@ local dec_brightness_cmd
 local brightness_widget = {}
 
 local function show_warning(message)
-	naughty.notify({
-		preset = naughty.config.presets.critical,
-		title = "Brightness Widget",
-		text = message,
-	})
+    naughty.notify({
+        preset = naughty.config.presets.critical,
+        title = "Brightness Widget",
+        text = message
+    })
 end
 
 local function worker(user_args)
-	  local args = user_args or {}
+    local args = user_args or {}
 
     local type = args.type or 'arc' -- arc or icon_and_text
     local path_to_icon = args.path_to_icon or ICON_DIR .. 'brightness.svg'
@@ -70,18 +69,14 @@ local function worker(user_args)
         brightness_widget.widget = wibox.widget {
             {
                 {
-                    --image = '/home/sahil/.config/awesome/brightness-widget/brightness.svg',
+                    -- image = '/home/sahil/.config/awesome/brightness-widget/brightness.svg',
                     resize = false,
-                    widget = wibox.widget.imagebox,
+                    widget = wibox.widget.imagebox
                 },
                 valign = 'center',
                 layout = wibox.container.place
             },
-            {
-                id = 'txt',
-                font = font,
-                widget = wibox.widget.textbox
-            },
+            {id = 'txt', font = font, widget = wibox.widget.textbox},
             spacing = 4,
             layout = wibox.layout.fixed.horizontal,
             set_value = function(self, level)
@@ -89,7 +84,9 @@ local function worker(user_args)
                 if percentage then
                     display_level = display_level .. '%'
                 end
-                self:get_children_by_id('txt')[1]:set_text('  '.. display_level .. '')
+                self:get_children_by_id('txt')[1]:set_text('  ' ..
+                                                               display_level ..
+                                                               '')
             end
         }
     elseif type == 'arc' then
@@ -98,7 +95,7 @@ local function worker(user_args)
                 {
                     image = path_to_icon,
                     resize = true,
-                    widget = wibox.widget.imagebox,
+                    widget = wibox.widget.imagebox
                 },
                 valign = 'center',
                 layout = wibox.container.place
@@ -110,9 +107,7 @@ local function worker(user_args)
             forced_width = 18,
             paddings = 2,
             widget = wibox.container.arcchart,
-            set_value = function(self, level)
-                self:set_value(level)
-            end
+            set_value = function(self, level) self:set_value(level) end
         }
     else
         show_warning(type .. " type is not supported by the widget")
@@ -165,31 +160,25 @@ local function worker(user_args)
         end)
     end
 
-    brightness_widget.widget:buttons(
-            awful.util.table.join(
-                    awful.button({}, 1, function() brightness_widget:set(base) end),
-                    awful.button({}, 3, function() brightness_widget:toggle() end),
-                    awful.button({}, 4, function() brightness_widget:inc() end),
-                    awful.button({}, 5, function() brightness_widget:dec() end)
-            )
-    )
+    brightness_widget.widget:buttons(awful.util.table.join(
+                                         awful.button({}, 1, function()
+            brightness_widget:set(base)
+        end), awful.button({}, 3, function() brightness_widget:toggle() end),
+                                         awful.button({}, 4, function()
+            brightness_widget:inc()
+        end), awful.button({}, 5, function() brightness_widget:dec() end)))
 
     watch(get_brightness_cmd, timeout, update_widget, brightness_widget.widget)
 
     if tooltip then
         awful.tooltip {
-            objects        = { brightness_widget.widget },
-            timer_function = function()
-                return current_level .. " %"
-            end,
+            objects = {brightness_widget.widget},
+            timer_function = function() return current_level .. " %" end
         }
     end
 
     return brightness_widget.widget
 end
 
-return setmetatable(brightness_widget, {
-	__call = function(_, ...)
-		return worker(...)
-	end,
-})
+return setmetatable(brightness_widget,
+                    {__call = function(_, ...) return worker(...) end})
