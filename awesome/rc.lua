@@ -804,11 +804,11 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- AutoStart Applications
-awful.spawn.with_shell("nitrogen --restore")
-awful.spawn.with_shell("flameshot")
-awful.spawn.with_shell("nm-applet")
-awful.spawn.with_shell("picom")
+awful.spawn.with_shell("nitrogen --restore&")
+awful.spawn.with_shell("flameshot&")
+awful.spawn.with_shell("nm-applet&")
+awful.spawn.with_shell("picom&")
 awful.spawn.with_shell("blueman-applet")
-awful.spawn.with_shell("xinput set-prop \"SYNA3255:00 06CB:7F28 Touchpad\" \"libinput Tapping Enabled\" 1")
-awful.spawn.with_shell("xinput set-prop \"SYNA3255:00 06CB:7F28 Touchpad\" \"libinput Natural Scrolling Enabled\" 1")
-awful.spawn.with_shell("xinput set-prop \"SYNA3255:00 06CB:7F28 Touchpad\" 302 0.5")
+awful.spawn.with_shell("xinput set-prop \"SYNA3255:00 06CB:7F28 Touchpad\" \"libinput Tapping Enabled\" 1&")
+awful.spawn.with_shell("xinput set-prop \"SYNA3255:00 06CB:7F28 Touchpad\" \"libinput Natural Scrolling Enabled\" 1&")
+awful.spawn.with_shell("xinput set-prop \"SYNA3255:00 06CB:7F28 Touchpad\" 302 0.5&")
