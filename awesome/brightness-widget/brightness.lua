@@ -70,7 +70,7 @@ local function worker(user_args)
         brightness_widget.widget = wibox.widget {
             {
                 {
-                    image = '/home/sahil/.config/awesome/brightness-widget/brightness.svg',
+                    --image = '/home/sahil/.config/awesome/brightness-widget/brightness.svg',
                     resize = false,
                     widget = wibox.widget.imagebox,
                 },
@@ -89,7 +89,7 @@ local function worker(user_args)
                 if percentage then
                     display_level = display_level .. '%'
                 end
-                self:get_children_by_id('txt')[1]:set_text(display_level.. '%')
+                self:get_children_by_id('txt')[1]:set_text('  '.. display_level.. '%')
             end
         }
     elseif type == 'arc' then
