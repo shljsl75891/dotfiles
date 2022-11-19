@@ -425,7 +425,6 @@ globalkeys = mytable.join(
               {description = "show weather", group = "widgets"}),
 
     -- Screen brightness
-
     --awful.key({},"XF86MonBrightnessUp",     function () awful.util.spawn("brightnessctl s 10+") end),
     --awful.key({}, "XF86MonBrightnessDown",     function () awful.util.spawn("brightnessctl s 10-") end),
     awful.key({}, "XF86MonBrightnessUp", function () brightness_widget:inc() end, {description = "increase brightness", group = "custom"}),
