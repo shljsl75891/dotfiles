@@ -256,13 +256,13 @@ theme.volume.widget:buttons(awful.util.table.join(
 ))
 
 -- Net
-local neticon = wibox.widget.imagebox(theme.widget_net)
+--local neticon = wibox.widget.imagebox(theme.widget_net)
 local net = lain.widget.net({
     settings = function()
         widget:set_markup(markup.font(theme.font,
-                          markup("#7AC82E", " " .. string.format("%06.1f KB/s", net_now.received))
+                          markup("#7AC82E", "    " .. string.format("%06.1f KB/s", net_now.received))
                           .. " " ..
-                          markup("#46A8C3", " " .. string.format("%06.1f KB/s", net_now.sent) .. " ")))
+                          markup("#46A8C3", "     " .. string.format("%06.1f KB/s", net_now.sent) .. " ")))
     end
 })
 
