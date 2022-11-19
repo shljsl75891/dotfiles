@@ -19,7 +19,7 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/mytheme"
 --theme.wallpaper                                 = theme.dir .. "/wall.png"
-theme.font                                      = "SF Pro Text Medium 10"
+theme.font                                      = "SF Pro Text Bold 10"
 theme.taglist_font                              = "SF Pro Text 18"
 theme.fg_normal                                 = "#ffffff"
 theme.fg_focus                                  = "#ffffff"
@@ -28,9 +28,9 @@ theme.bg_normal                                 = "#121212"
 theme.bg_focus                                  = "#6272a4"
 theme.bg_urgent                                 = "#1A1A1A"
 theme.border_normal                             = "#3F3F3F"
-theme.border_focus                              = "#50fa7b"
+theme.border_focus                              = "#ffffff"
 theme.border_marked                             = "#CC9393"
-theme.border_width                              = dpi(2)
+theme.border_width                              = dpi(0)
 theme.bg_systray                                = theme.bg_focus
 theme.tasklist_bg_focus                         = "#6272a4"
 theme.titlebar_bg_focus                         = theme.bg_focus
@@ -72,7 +72,7 @@ theme.widget_mail                               = theme.dir .. "/icons/mail.png"
 theme.widget_mail_on                            = theme.dir .. "/icons/mail_on.png"
 theme.tasklist_plain_task_name                  = false
 theme.tasklist_disable_icon                     = false
-theme.useless_gap                               = dpi(8)
+theme.useless_gap                               = dpi(5)
 theme.titlebar_close_button_focus               = theme.dir .. "/icons/titlebar/close_focus.png"
 theme.titlebar_close_button_normal              = theme.dir .. "/icons/titlebar/close_normal.png"
 theme.titlebar_ontop_button_focus_active        = theme.dir .. "/icons/titlebar/ontop_focus_active.png"
@@ -320,6 +320,7 @@ function theme.at_screen_connect(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            arrl_dl,
             s.mylayoutbox,
             --keyboardlayout,
             arrl_ld,
