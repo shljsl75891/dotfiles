@@ -345,7 +345,7 @@ function theme.at_screen_connect(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             -- spr,
-            s.mytaglist,
+            s.mytaglist
             -- s.mypromptbox,
             -- spr
         },
@@ -393,7 +393,7 @@ function theme.at_screen_connect(s)
             -- arrl_dl,
             wibox.container.background(clock, theme.bg_normal),
             -- spr,
-            wibox.container.background(s.mylayoutbox, theme.bg_normal),
+            wibox.container.background(s.mylayoutbox, theme.bg_normal)
         }
     }
 end
