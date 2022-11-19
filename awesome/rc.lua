@@ -326,15 +326,6 @@ globalkeys = mytable.join(
     awful.key({ modkey,           }, "w", function () awful.util.mymainmenu:show() end,
               {description = "show main menu", group = "awesome"}),
 
-    -- Change Volume
-    awful.key({},"XF86AudioRaiseVolume",     function () awful.util.spawn("amixer sset 'Master' 2%+") end),
-    awful.key({}, "XF86AudioLowerVolume",     function () awful.util.spawn("amixer sset 'Master' 2%-") end),
-
-    -- Change brightness
-    --awful.key({},"XF86MonBrightnessUp",     function () awful.util.spawn("brightnessctl s 10+") end),
-    --awful.key({}, "XF86MonBrightnessDown",     function () awful.util.spawn("brightnessctl s 10-") end),
-    awful.key({}, "XF86MonBrightnessUp", function () brightness_widget:inc() end, {description = "increase brightness", group = "custom"}),
-    awful.key({}, "XF86MonBrightnessDown", function () brightness_widget:dec() end, {description = "decrease brightness", group = "custom"}),
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
               {description = "swap with next client by index", group = "client"}),
@@ -434,27 +425,28 @@ globalkeys = mytable.join(
               {description = "show weather", group = "widgets"}),
 
     -- Screen brightness
-    awful.key({ }, "XF86MonBrightnessUp", function () os.execute("xbacklight -inc 10") end,
-              {description = "+10%", group = "hotkeys"}),
-    awful.key({ }, "XF86MonBrightnessDown", function () os.execute("xbacklight -dec 10") end,
-              {description = "-10%", group = "hotkeys"}),
+
+    --awful.key({},"XF86MonBrightnessUp",     function () awful.util.spawn("brightnessctl s 10+") end),
+    --awful.key({}, "XF86MonBrightnessDown",     function () awful.util.spawn("brightnessctl s 10-") end),
+    awful.key({}, "XF86MonBrightnessUp", function () brightness_widget:inc() end, {description = "increase brightness", group = "custom"}),
+    awful.key({}, "XF86MonBrightnessDown", function () brightness_widget:dec() end, {description = "decrease brightness", group = "custom"}),
 
     -- ALSA volume control
-    awful.key({ altkey }, "Up",
+    awful.key({}, "XF86AudioRaiseVolume",
         function ()
-            os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
+            os.execute(string.format("amixer sset 'Master' 1%%+", beautiful.volume.channel))
             beautiful.volume.update()
         end,
         {description = "volume up", group = "hotkeys"}),
-    awful.key({ altkey }, "Down",
+    awful.key({}, "XF86AudioLowerVolume",
         function ()
-            os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
+            os.execute(string.format("amixer sset 'Master' 1%%-", beautiful.volume.channel))
             beautiful.volume.update()
         end,
         {description = "volume down", group = "hotkeys"}),
-    awful.key({ altkey }, "m",
+    awful.key({}, "XF86AudioMute",
         function ()
-            os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
+            os.execute(string.format("amixer sset 'Master' toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
             beautiful.volume.update()
         end,
         {description = "toggle mute", group = "hotkeys"}),

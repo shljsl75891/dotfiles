@@ -347,7 +347,7 @@ function theme.at_screen_connect(s)
             brightness_widget{
                 type = 'icon_and_text',
                 program = 'brightnessctl',
-                step = 2
+                step = 1
             }, 
             arrl_ld,
             wibox.container.background(baticon, theme.bg_focus),
