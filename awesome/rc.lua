@@ -534,7 +534,7 @@ globalkeys = mytable.join( -- Destroy all notifications
     }), -- Prompt
     awful.key({modkey}, "r", function()
         awful.util.spawn(
-            "dmenu_run -fn 'SF Pro Display-11' -nb '#000000' -nf '#aaaaaa' -sf '#000000' -sb '#6272a4'")
+            "dmenu_run -fn 'SF Pro Text-10:medium:' -nb '#000000' -nf '#aaaaaa' -sf '#ffffff' -sb '#6272a4'")
     end, {description = "dmenu", group = "launcher"}),
 
                  awful.key({modkey}, "x", function()
