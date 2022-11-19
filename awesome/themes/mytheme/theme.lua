@@ -19,7 +19,7 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/mytheme"
 --theme.wallpaper                                 = theme.dir .. "/wall.png"
-theme.font                                      = "SF Pro Display Semibold 10"
+theme.font                                      = "SF Pro Text Medium 10"
 theme.fg_normal                                 = "#DDDDFF"
 theme.fg_focus                                  = "#50fa7b"
 theme.fg_urgent                                 = "#CC9393"
@@ -30,6 +30,7 @@ theme.border_normal                             = "#3F3F3F"
 theme.border_focus                              = "#50fa7b"
 theme.border_marked                             = "#CC9393"
 theme.border_width                              = dpi(2)
+theme.bg_systray                                = "#44475a"
 theme.tasklist_bg_focus                         = "#6272a4"
 theme.titlebar_bg_focus                         = theme.bg_focus
 theme.titlebar_bg_normal                        = theme.bg_normal
@@ -174,7 +175,7 @@ theme.mpd = lain.widget.mpd({
 local memicon = wibox.widget.imagebox(theme.widget_mem)
 local mem = lain.widget.mem({
     settings = function()
-        widget:set_markup(markup.font(theme.font, "" .. mem_now.used .. "MB "))
+        widget:set_markup(markup.font(theme.font, "" .. string.format("%.02f", mem_now.used / 1024) .. "GB "))
     end
 })
 
@@ -260,9 +261,9 @@ theme.volume.widget:buttons(awful.util.table.join(
 local net = lain.widget.net({
     settings = function()
         widget:set_markup(markup.font(theme.font,
-                          markup("#7AC82E", "    " .. string.format("%06.1f KB/s", net_now.received))
+                          markup("#7AC82E", "    " .. string.format("%.0f KB/s", net_now.received))
                           .. " " ..
-                          markup("#46A8C3", "     " .. string.format("%06.1f KB/s", net_now.sent) .. " ")))
+                          markup("#46A8C3", "     " .. string.format("%.0f KB/s", net_now.sent) .. " ")))
     end
 })
 
@@ -318,9 +319,8 @@ function theme.at_screen_connect(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wibox.widget.systray(),
+            s.mylayoutbox,
             --keyboardlayout,
-            spr,
             arrl_ld,
             --wibox.container.background(mpdicon, theme.bg_focus),
             --wibox.container.background(theme.mpd.widget, theme.bg_focus),
@@ -347,7 +347,7 @@ function theme.at_screen_connect(s)
             brightness_widget{
                 type = 'icon_and_text',
                 program = 'brightnessctl',
-                step = 1
+                step = 5
             }, 
             arrl_ld,
             wibox.container.background(baticon, theme.bg_focus),
@@ -356,10 +356,10 @@ function theme.at_screen_connect(s)
             neticon,
             net.widget,
             arrl_ld,
+            wibox.widget.systray(),
             --arrl_dl,
             wibox.container.background(clock, theme.bg_focus),
             --spr,
-            wibox.container.background(s.mylayoutbox, theme.bg_focus),
         },
     }
 end
