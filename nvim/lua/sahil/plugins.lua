@@ -46,4 +46,8 @@ return packer.startup(function(use)
 	use {'neoclide/coc.nvim', branch = 'release'}
 	use "Mofiqul/dracula.nvim"
 	use "akinsho/toggleterm.nvim"
+	use "kyazdani42/nvim-tree.lua"
+	use "kyazdani42/nvim-web-devicons"
+	use "nvim-lualine/lualine.nvim"
+	use "lewis6991/impatient.nvim"
 end)

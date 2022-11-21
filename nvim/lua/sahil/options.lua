@@ -11,12 +11,12 @@ vim.opt.updatetime=300
 vim.opt.shiftwidth=4
 vim.opt.tabstop=4
 vim.opt.cursorline=true
-vim.opt.cmdheight=2
+vim.opt.cmdheight=3
 vim.opt.numberwidth=4
 vim.opt.number=true
 vim.opt.relativenumber=false
 vim.opt.termguicolors=true
-vim.opt.showtabline=5
+vim.opt.showtabline=2
 
 -- Vim-Script Options using Lua
 vim.cmd[[colorscheme dracula]]

@@ -40,3 +40,8 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+
+
+-- Toggle Nvim-Tree
+keymap("n", "<C-t>", ":NvimTreeToggle<CR>", opts)
+
