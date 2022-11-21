@@ -1,6 +1,7 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
     alias ls='exa -alh --color=always --group-directories-first' 
+    alias mkdir='mkdir -pv' 
     alias clear='clear && ~/Documents/ufetch-debian.sh'
     alias search='nala search'
     alias install='sudo nala install'

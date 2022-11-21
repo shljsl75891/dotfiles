@@ -533,10 +533,15 @@ globalkeys = mytable.join( -- Destroy all notifications
         description = "open file-manager",
         group = "launcher"
     }), -- Prompt
+    --awful.key({modkey}, "r", function()
+        --awful.util.spawn(
+            --"dmenu_run -fn 'SF Pro Text-10:medium:' -nb '#000000' -nf '#aaaaaa' -sf '#ffffff' -sb '#6272a4'")
+    --end, {description = "dmenu", group = "launcher"}),
+
     awful.key({modkey}, "r", function()
         awful.util.spawn(
-            "dmenu_run -fn 'SF Pro Text-10:medium:' -nb '#000000' -nf '#aaaaaa' -sf '#ffffff' -sb '#6272a4'")
-    end, {description = "dmenu", group = "launcher"}),
+            "rofi -show run")
+    end, {description = "rofi", group = "launcher"}),
 
                  awful.key({modkey}, "x", function()
         awful.prompt.run {
