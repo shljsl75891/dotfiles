@@ -1,0 +1,5 @@
+require("sahil.options")
+require("sahil.autopairs")
+require("sahil.keybindings")
+require("sahil.coc-conf")
+require("sahil.plugins")
