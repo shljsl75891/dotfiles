@@ -45,4 +45,5 @@ return packer.startup(function(use)
 	use "windwp/nvim-autopairs"
 	use {'neoclide/coc.nvim', branch = 'release'}
 	use "Mofiqul/dracula.nvim"
+	use "akinsho/toggleterm.nvim"
 end)

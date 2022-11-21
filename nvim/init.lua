@@ -1,4 +1,5 @@
 require("sahil.options")
+require("sahil.toggleterm")
 require("sahil.autopairs")
 require("sahil.keybindings")
 require("sahil.coc-conf")

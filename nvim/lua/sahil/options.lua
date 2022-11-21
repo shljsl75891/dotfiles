@@ -16,6 +16,7 @@ vim.opt.numberwidth=4
 vim.opt.number=true
 vim.opt.relativenumber=false
 vim.opt.termguicolors=true
+vim.opt.showtabline=5
 
 -- Vim-Script Options using Lua
 vim.cmd[[colorscheme dracula]]
