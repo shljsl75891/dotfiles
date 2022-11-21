@@ -277,16 +277,17 @@ globalkeys = mytable.join( -- Destroy all notifications
                            {description = "go back", group = "tag"}),
 
     -- Non-empty tag browsing
-                 awful.key({altkey}, "Left",
-                           function() lain.util.tag_view_nonempty(-1) end, {
-        description = "view  previous nonempty",
-        group = "tag"
-    }),
-                 awful.key({altkey}, "Right",
-                           function() lain.util.tag_view_nonempty(1) end, {
-        description = "view  previous nonempty",
-        group = "tag"
-    }), -- Default client focus
+                 --awful.key({altkey}, "Left",
+                           --function() lain.util.tag_view_nonempty(-1) end, {
+        --description = "view  previous nonempty",
+        --group = "tag"
+    --}),
+                 --awful.key({altkey}, "Right",
+                           --function() lain.util.tag_view_nonempty(1) end, {
+        --description = "view  previous nonempty",
+        --group = "tag"
+   -- }),
+    -- Default client focus
     awful.key({altkey}, "j", function() awful.client.focus.byidx(1) end,
               {description = "focus next by index", group = "client"}),
                  awful.key({altkey}, "k",
@@ -779,3 +780,4 @@ awful.spawn.with_shell(
     "xinput set-prop \"SYNA3255:00 06CB:7F28 Touchpad\" \"libinput Natural Scrolling Enabled\" 1&")
 awful.spawn.with_shell(
     "xinput set-prop \"SYNA3255:00 06CB:7F28 Touchpad\" 302 0.5&")
+awful.spawn.with_shell("copyq&")
