@@ -1,5 +1,6 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
+	export PATH="$HOME/.emacs.d/bin:$PATH"
     alias ls='exa -alh --color=always --group-directories-first' 
 	alias clear='clear && pfetch'
     alias mkdir='mkdir -pv' 
@@ -9,6 +10,7 @@ if status is-interactive
     alias install='sudo nala install'
     alias purge='sudo nala purge'
     alias history='sudo nala history'
+	alias emacs='emacsclient -c -a "nvim"'
     starship init fish | source
 	pfetch
 end

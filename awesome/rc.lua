@@ -333,9 +333,9 @@ globalkeys = my_table.join(
         {description = mailclient , group = "function keys" }),
     awful.key({ modkey }, "F10", function () awful.util.spawn( mediaplayer ) end,
         {description = mediaplayer , group = "function keys" }),
-    awful.key({ modkey }, "d", function () awful.util.spawn( "rofi -show run" ) end,
+    awful.key({ modkey }, "r", function () awful.util.spawn( "rofi -show run" ) end,
         {description = "rofi fullscreen" , group = "function keys" }),
-    awful.key({ modkey }, "r", function () awful.util.spawn( "rofi -show drun" ) end,
+    awful.key({ modkey }, "d", function () awful.util.spawn( "rofi -show drun" ) end,
         {description = "rofi" , group = "function keys" }),
 
     -- super + ...
