@@ -713,47 +713,47 @@ globalkeys = my_table.join(
     awful.key({}, "XF86AudioStop", function () awful.util.spawn("mpc stop") end),
 
     -- MPD control
-    awful.key({ modkey1, "Shift" }, "Up",
-        function ()
-            os.execute("mpc toggle")
-            beautiful.mpd.update()
-        end,
-        {description = "mpc toggle", group = "widgets"}),
-    awful.key({ modkey1, "Shift" }, "Down",
-        function ()
-            os.execute("mpc stop")
-            beautiful.mpd.update()
-        end,
-        {description = "mpc stop", group = "widgets"}),
-    awful.key({ modkey1, "Shift" }, "Left",
-        function ()
-            os.execute("mpc prev")
-            beautiful.mpd.update()
-        end,
-        {description = "mpc prev", group = "widgets"}),
-    awful.key({ modkey1, "Shift" }, "Right",
-        function ()
-            os.execute("mpc next")
-            beautiful.mpd.update()
-        end,
-        {description = "mpc next", group = "widgets"}),
-    awful.key({ modkey1, "Shift" }, "s",
-
-
-
-        function ()
-            local common = { text = "MPD widget ", position = "top_middle", timeout = 2 }
-            if beautiful.mpd.timer.started then
-                beautiful.mpd.timer:stop()
-                common.text = common.text .. lain.util.markup.bold("OFF")
-            else
-                beautiful.mpd.timer:start()
-                common.text = common.text .. lain.util.markup.bold("ON")
-            end
-            naughty.notify(common)
-        end,
-        {description = "mpc on/off", group = "widgets"}),
-
+    --awful.key({ modkey1, "Shift" }, "Up",
+        --function ()
+            --os.execute("mpc toggle")
+            --beautiful.mpd.update()
+        --end,
+        --{description = "mpc toggle", group = "widgets"}),
+    --awful.key({ modkey1, "Shift" }, "Down",
+        --function ()
+            --os.execute("mpc stop")
+            --beautiful.mpd.update()
+        --end,
+        --{description = "mpc stop", group = "widgets"}),
+    --awful.key({ modkey1, "Shift" }, "Left",
+        --function ()
+            --os.execute("mpc prev")
+            --beautiful.mpd.update()
+        --end,
+        --{description = "mpc prev", group = "widgets"}),
+    --awful.key({ modkey1, "Shift" }, "Right",
+        --function ()
+            --os.execute("mpc next")
+            --beautiful.mpd.update()
+        --end,
+        --{description = "mpc next", group = "widgets"}),
+    --awful.key({ modkey1, "Shift" }, "s",
+--
+--
+--
+        --function ()
+            --local common = { text = "MPD widget ", position = "top_middle", timeout = 2 }
+            --if beautiful.mpd.timer.started then
+                --beautiful.mpd.timer:stop()
+                --common.text = common.text .. lain.util.markup.bold("OFF")
+            --else
+                --beautiful.mpd.timer:start()
+                --common.text = common.text .. lain.util.markup.bold("ON")
+            --end
+            --naughty.notify(common)
+        --end,
+        --{description = "mpc on/off", group = "widgets"}),
+--
     -- Copy primary to clipboard (terminals to gtk)
     --awful.key({ modkey }, "c", function () awful.spawn.with_shell("xsel | xsel -i -b") end,
              -- {description = "copy terminal to gtk", group = "hotkeys"}),
