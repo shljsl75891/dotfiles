@@ -349,7 +349,7 @@ s.mywibox:setup {
 		--arrl_ld,
 		--wibox.container.background(mailicon, theme.bg_focus),
 		--wibox.container.background(theme.mail.widget, theme.bg_focus),
-		--arrl_dl,
+		arrl_dl,
 		memicon,
 		mem.widget,
 		arrl_ld,
