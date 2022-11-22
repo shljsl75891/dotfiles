@@ -53,4 +53,5 @@ return packer.startup(function(use)
     use "nvim-treesitter/nvim-treesitter"
 	use "akinsho/bufferline.nvim"
 	use "numToStr/Comment.nvim"
+	use "JoosepAlviste/nvim-ts-context-commentstring"
 end)
