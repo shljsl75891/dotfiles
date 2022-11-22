@@ -4,6 +4,7 @@ if status is-interactive
 	alias clear='clear && pfetch'
     alias mkdir='mkdir -pv' 
 	alias rm='rm -v'
+	alias g++='g++ -std=c++20 -Wall'
     alias search='nala search'
     alias install='sudo nala install'
     alias purge='sudo nala purge'
