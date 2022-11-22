@@ -52,4 +52,5 @@ return packer.startup(function(use)
 	use "lewis6991/impatient.nvim"
     use "nvim-treesitter/nvim-treesitter"
 	use "akinsho/bufferline.nvim"
+	use "numToStr/Comment.nvim"
 end)
