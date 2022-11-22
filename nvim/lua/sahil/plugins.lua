@@ -43,6 +43,7 @@ packer.init({
 return packer.startup(function(use)
 	use "wbthomason/packer.nvim"
 	use "windwp/nvim-autopairs"
+	use "nvim-lua/plenary.nvim"
 	use {'neoclide/coc.nvim', branch = 'release'}
 	use "Mofiqul/dracula.nvim"
 	use "akinsho/toggleterm.nvim"
@@ -54,4 +55,5 @@ return packer.startup(function(use)
 	use "akinsho/bufferline.nvim"
 	use "numToStr/Comment.nvim"
 	use "JoosepAlviste/nvim-ts-context-commentstring"
+	use "nvim-telescope/telescope.nvim"
 end)
