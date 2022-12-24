@@ -43,16 +43,11 @@ packer.init({
 return packer.startup(function(use)
 	use "wbthomason/packer.nvim"
 	use "windwp/nvim-autopairs"
-	use "nvim-lua/plenary.nvim"
+	use "cpea2506/one_monokai.nvim"
 	use "Mofiqul/dracula.nvim"
-	use "akinsho/toggleterm.nvim"
-	use "kyazdani42/nvim-tree.lua"
-	use "kyazdani42/nvim-web-devicons"
 	use "nvim-lualine/lualine.nvim"
 	use "lewis6991/impatient.nvim"
-    use "nvim-treesitter/nvim-treesitter"
 	use "akinsho/bufferline.nvim"
 	use "numToStr/Comment.nvim"
 	use "JoosepAlviste/nvim-ts-context-commentstring"
-	use "nvim-telescope/telescope.nvim"
 end)

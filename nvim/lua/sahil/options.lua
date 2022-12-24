@@ -19,4 +19,4 @@ vim.opt.termguicolors=true
 vim.opt.showtabline=2
 
 -- Vim-Script Options using Lua
---vim.cmd[[colorscheme dracula]]
+vim.cmd[[colorscheme one_monokai]]
