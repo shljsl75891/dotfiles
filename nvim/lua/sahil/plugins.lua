@@ -44,7 +44,6 @@ return packer.startup(function(use)
 	use "wbthomason/packer.nvim"
 	use "windwp/nvim-autopairs"
 	use "nvim-lua/plenary.nvim"
-	use {'neoclide/coc.nvim', branch = 'release'}
 	use "Mofiqul/dracula.nvim"
 	use "akinsho/toggleterm.nvim"
 	use "kyazdani42/nvim-tree.lua"
