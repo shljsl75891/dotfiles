@@ -104,11 +104,6 @@ _G.packer_plugins = {
     path = "/home/sahil/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
   },
-  ["nvim-ts-context-commentstring"] = {
-    loaded = true,
-    path = "/home/sahil/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
-    url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
-  },
   ["one_monokai.nvim"] = {
     loaded = true,
     path = "/home/sahil/.local/share/nvim/site/pack/packer/start/one_monokai.nvim",
